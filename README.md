@@ -12,13 +12,13 @@ Hiasa Y, Otake Y, Takao M, et al. Cross-modality image synthesis from unpaired d
 
 The gradient consistency loss is an implementation of the gradient correlation (GC), which is defined by the normalized cross correlation (NCC) between the gradients of two images. Given two images, A and B, the GC is defined as
 
-<img src="https://render.githubusercontent.com/render/math?math=GC\left(A,B\right) = \frac{1}{2}\{ NCC\left(\triangledown_{x}A, \triangledown_{x}B\right) + NCC\left(\triangledown_{y}A, \triangledown_{y}B\right)\">
+<img src="https://render.githubusercontent.com/render/math?math=GC(A,B) = \frac{1}{2}\{ NCC(\triangledown_{x}A, \triangledown_{x}B\right) + NCC(\triangledown_{y}A, \triangledown_{y}B)\">
 
 where \( \triangledown_{x}\) and \( \triangledown_{y}\) are the gradient operators in the horizontal and vertical directions, respectively. The \( NCC(A,B)\) is defined as 
 
 <img src="https://render.githubusercontent.com/render/math?math=NCC\left(A,B\right) = \frac{\sum_{(i,j)}^{}(A -\overline{A})(B -\overline{B})}{\sqrt{\sum_{(i,j)}^{}(A -\overline{A})^{2}}\sqrt{\sum_{(i,j)}^{}(B -\overline{B})^{2}}}">
 
-where \(\overline{A}\) and \(\overline{B}\)represent the mean values of \( A\) and \( B\), respectively. Using these equations, the gradient consistency loss \( L_{GC}\) can be defined as
+where \(\overline{A}\) and \(\overline{B}\)represent the mean values of \(A\) and \(B\), respectively. Using these equations, the gradient consistency loss \( L_{GC}\) can be defined as
 
 <img src="https://render.githubusercontent.com/render/math?math=L_{GC}\left(G\right) = \mathbb{E}_{x,y,z}[1 - GC\left(y,G\left(x,z\right)\right)]">
 
