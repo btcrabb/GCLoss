@@ -5,10 +5,11 @@ from torch import nn
 import torch.nn.functional as F
 
 def gradient(x):
+	# Calculates the gradients in the x and y directions for an array
 	# idea from tf.image.image_gradients(image)
 	# https://github.com/tensorflow/tensorflow/blob/r2.1/tensorflow/python/ops/image_ops_impl.py#L3441-L3512
 	# x: (b,c,h,w), float32 or float64
-	# dx, dy: (b,c,h,w)
+	# returns: dx, dy: (b,c,h,w)
 
 	h_x = x.size()[-2]
 	w_x = x.size()[-1]
@@ -27,6 +28,9 @@ def gradient(x):
 	return dx, dy
 
 def ncc(A, B):
+	# Calculates the normalized cross correlation between array A and B
+	# A and B: (b,c,h,w), float32 or float64
+	# returns: float
 
 	numerator = torch.sum(torch.mul(torch.sub(A, torch.mean(A)),torch.sub(B, torch.mean(B))))
 
@@ -37,6 +41,9 @@ def ncc(A, B):
 
 
 def gc(tensorA, tensorB):
+	# Calculates the gradient correlation between tensor A and BaseException
+	# A and B: (b,c,h,w), float32 or float64
+	# returns: float
 
 	dxA, dyA = gradient(tensorA)
 	dxB, dyB = gradient(tensorB)
@@ -45,7 +52,10 @@ def gc(tensorA, tensorB):
 
 	return torch.sub(1,loss)
 	
-deg gc_with_gradient(tensorA, tensorB):
+def gc_with_gradient(tensorA, tensorB):
+	# implentation of GC function above with image gradients.
+	# A and B: (b,c,h,w), float32 or float64
+	# returns: float, array, array
 	
 	A = Variable(tensorA, requires_grad=True)
 	B = Variable(tensorB, requires_grad=True)
