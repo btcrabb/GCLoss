@@ -41,7 +41,7 @@ def ncc(A, B):
 
 
 def gc(tensorA, tensorB):
-	# Calculates the gradient correlation between tensor A and BaseException
+	# Calculates the gradient correlation between tensor A and B
 	# A and B: (b,c,h,w), float32 or float64
 	# returns: float
 
