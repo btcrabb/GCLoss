@@ -12,7 +12,9 @@ Hiasa Y, Otake Y, Takao M, et al. Cross-modality image synthesis from unpaired d
 
 The objective function of a conditional GAN has been previously well defined and can be expressed as,
 
-![equation](https://latex.codecogs.com/gif.latex?%5Cbg_white%20%5Cbegin%7Bequation%7D%20L_%7Badv%7D%28G%2CD%29%20%3D%20%5Cmathbb%7BE%7D_%7Bx%2Cy%7D%5BlogD%28x%2C%20y%29%5D%20&plus;%20%5Cmathbb%7BE%7D_%7Bx%2Cz%7D%5Blog%281%20-%20D%28x%2C%20G%28x%2C%20z%29%29%5D%2C%20%5Cend%7Bequation%7D)
+![equation](https://latex.codecogs.com/gif.latex?%5Cbegin%7Bequation%7D%20L_%7Badv%7D%28G%2CD%29%20%3D%20%5Cmathbb%7BE%7D_%7Bx%2Cy%7D%5BlogD%28x%2C%20y%29%5D%20&plus;%20%5Cmathbb%7BE%7D_%7Bx%2Cz%7D%5Blog%281%20-%20D%28x%2C%20G%28x%2C%20z%29%29%5D%2C%20%5Cend%7Bequation%7D)
+
+<img src="https://render.githubusercontent.com/render/math?math=L_{adv}(G,D)  = \mathbb{E}_{x,y}[logD(x, y)]  + \mathbb{E}_{x,z}[log(1  -  D(x, G(x, z))]">
 
 where the discriminator, D, tries to maximize the objective and the generator, G, tries to minimize it. This term is described as the adversarial loss; however, it is also paired with a more traditional L1 distance loss function defined as,
 
