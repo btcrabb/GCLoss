@@ -12,6 +12,8 @@ Hiasa Y, Otake Y, Takao M, et al. Cross-modality image synthesis from unpaired d
 
 The objective function of a conditional GAN has been previously well defined and can be expressed as,
 
+$L_{adv}(G,D) = \mathbb{E}_{x,y}[logD(x,y)] + \mathbb{E}_{x,z}[log(1-D(x, G(x,z))]$
+
 $$\\[
 L_{adv}(G,D)  = \mathbb{E}_{x,y}[logD(x, y)]  + \mathbb{E}_{x,z}[log(1  -  D(x, G(x, z))],
 \\]$$
